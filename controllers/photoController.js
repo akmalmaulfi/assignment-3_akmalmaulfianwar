@@ -25,7 +25,9 @@ class PhotoController {
 
   static createPhoto(req, res) {
     const { title, caption, image_url } = req.body
-    Photo.create({ title, caption, image_url })
+    const user = res.locals.user
+
+    Photo.create({ title, caption, image_url, UserId: user.id })
       .then((result) => {
         res.status(201).json(result)
       })
