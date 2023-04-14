@@ -5,6 +5,7 @@ function authentication(req, res, next) {
   try {
     const token = req.get("token")
     const userDecoded = verifyToken(token)
+    console.log(userDecoded)
     User.findOne({
       where: {
         id: userDecoded.id,

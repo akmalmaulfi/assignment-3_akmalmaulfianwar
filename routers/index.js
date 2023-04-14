@@ -14,12 +14,13 @@ const authorization = require("../middlewares/authorization")
 router.post("/users/register", register)
 router.post("/users/login", login)
 
-router.use(authentication)
+router.use(authentication) // Authentication Middleware
+
 // Photos Routers
 router.get("/photos", getAllPhotos)
-router.get("/photos/:id", getOnePhotoById)
 router.post("/photos", createPhoto)
-router.use("/photos/:id", authorization)
+router.use("/photos/:id", authorization) // Authorization Middleware
+router.get("/photos/:id", getOnePhotoById)
 router.put("/photos/:id", updateOnePhotoById)
 router.delete("/photos/:id", deleteOnePhotoById)
 

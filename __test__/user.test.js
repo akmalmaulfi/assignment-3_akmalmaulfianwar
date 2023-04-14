@@ -7,6 +7,7 @@ const userData = {
   password: "12345678",
 }
 
+// Testing Register User
 describe("POST /users/register", () => {
   it("should send response with 201 status code", (done) => {
     request(app)
@@ -28,6 +29,7 @@ describe("POST /users/register", () => {
   })
 })
 
+// Testing Login User
 describe("POST /users/login", () => {
   it("should send response with 200 status code", (done) => {
     request(app)
@@ -46,23 +48,13 @@ describe("POST /users/login", () => {
   })
 })
 
-afterAll((done) => {
-  sequelize.queryInterface
-    .bulkDelete("Users", {})
-    .then(() => {
-      return done()
-    })
-    .catch((err) => {
-      done(err)
-    })
-})
-
 const wrongUser = {
   username: "wrong_user",
   email: "wronguser@gmail.com",
   password: "123456",
 }
 
+// Testing Login User
 describe("POST /users/login", () => {
   it("should send response with 401 status code", (done) => {
     request(app)
@@ -80,4 +72,16 @@ describe("POST /users/login", () => {
         done()
       })
   })
+})
+
+// After All Testing
+afterAll((done) => {
+  sequelize.queryInterface
+    .bulkDelete("Users", {})
+    .then(() => {
+      return done()
+    })
+    .catch((err) => {
+      done(err)
+    })
 })
