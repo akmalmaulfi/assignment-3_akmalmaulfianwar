@@ -1,4 +1,4 @@
-How to run PhotoAlbum App :
+# How to run PhotoAlbum App :
 
 1. npm install
 2. npx sequelize db:create
