@@ -14,13 +14,13 @@
     "dialect": "postgres"
   },
   "production": {
+    "host": "containers-us-west-181.railway.app",
     "username": "postgres",
     "password": "yi4Wu34F8dLkgC7XJqOL",
     "database": "railway",
-    "host": "containers-us-west-181.railway.app",
+    "port": "6852",
     "dialect": "postgres",
     "url": "postgresql://postgres:yi4Wu34F8dLkgC7XJqOL@containers-us-west-181.railway.app:6852/railway",
-    "port": "6852",
     "pool": {
       "max": 5,
       "min": 0,
