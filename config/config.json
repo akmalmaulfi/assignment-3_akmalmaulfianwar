@@ -14,10 +14,17 @@
     "dialect": "postgres"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "postgres",
+    "password": "yi4Wu34F8dLkgC7XJqOL",
+    "database": "railway",
+    "host": "containers-us-west-181.railway.app",
+    "dialect": "postgres",
+    "port": "6852",
+    "pool": {
+      "max": 5,
+      "min": 0,
+      "acquire": 30000,
+      "idle": 10000
+    }
   }
 }
